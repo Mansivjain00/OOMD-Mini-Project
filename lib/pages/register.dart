@@ -93,6 +93,10 @@ class _RegisterPage extends State<RegisterPage>{
                 onSaved: (_value){},
                 hintText: "Password",
                 obscureText: true,
+            ),CustomTextFormField(
+                onSaved: (_value){},
+                hintText: "Forgot Password",
+                obscureText: true,
             ),
           ],
         ),

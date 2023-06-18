@@ -80,14 +80,47 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "Welcome Home,",
-                    style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
-                  ),
-                  Text(
-                    'Champ',
-                    style: TextStyle(fontSize: 40,color: Colors.grey.shade800),
-                  ),
+                  // Text(
+                  //   "Welcome Home,",
+                  //   style: TextStyle(fontSize: 20, color: Colors.grey.shade800),
+                  // ),
+                  // Text(
+                  //   'Champ',
+                  //   style: TextStyle(fontSize: 40,color: Colors.grey.shade800),
+                  // ),
+
+                  DefaultTabController(length: 3, child: TabBar(
+                    tabs: [
+                     Tab(
+                         icon: Text(
+                           'Living Room',
+                           style: TextStyle(
+                               color: Colors.black54,
+                             fontSize: 17,
+                             fontWeight: FontWeight.w700,
+                           ),
+                         ),
+                     ) ,Tab(
+                         icon: Text('Bedroom',
+                           style: TextStyle(
+                               color: Colors.black54,
+                             fontSize: 17,
+                             fontWeight: FontWeight.w700,
+                           ),
+                         ),
+                     ) ,Tab(
+                         icon: Text('Drawing Room',
+                             style: TextStyle(
+                                 color: Colors.black54,
+                               fontSize: 17,
+                               fontWeight: FontWeight.w700,
+                             ),
+                         ),
+                     ) ,
+                    ],
+                  )),
+
+
                 ],
               ),
             ),
@@ -96,10 +129,10 @@ class _HomePageState extends State<HomePage> {
 
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),
-              child: Divider(
-                thickness: 1,
-                color: Color.fromARGB(255, 204, 204, 204),
-              ),
+              // child: Divider(
+              //   thickness: 1,
+              //   color: Color.fromARGB(255, 204, 204, 204),
+              // ),
             ),
 
             const SizedBox(height: 25),
@@ -123,10 +156,10 @@ class _HomePageState extends State<HomePage> {
               child: GridView.builder(
                 itemCount: 4,
                 physics: const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 1 / 1.3,
+                  childAspectRatio: 1 / 1.4,
                 ),
                 itemBuilder: (context, index) {
                   return SmartDeviceBox(
@@ -137,7 +170,9 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-            )
+            ),
+            Center(
+                child: Icon(Icons.settings_voice_rounded,color: Colors.black54,size: 65,)),
           ],
         ),
       ),
